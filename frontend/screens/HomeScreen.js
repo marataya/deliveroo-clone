@@ -1,10 +1,12 @@
-import { View, Text, SafeAreaView, Image, StyleSheet, TextInput } from 'react-native';
+import { View, Text, SafeAreaView, Image, StyleSheet, TextInput, ScrollView } from 'react-native';
 import React, { useLayoutEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import tw from 'twrnc';
 import { ChevronDownIcon, UserIcon, AdjustmentsVerticalIcon, MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 // import { M } from 'react-native-heroicons/mini'
 import Svg, { Circle, Path } from 'react-native-svg';
+import Categories from '../components/Categories';
+import FeaturedRow from '../components/FeaturedRow';
 const HomeScreen = () => {
   const navigation = useNavigation();
 
@@ -26,8 +28,7 @@ const HomeScreen = () => {
             className="h-7 w-7 bg-gray-300 mr-1 p-4 rounded-full"
           />
           <View style={tw`flex-1`}>
-            <Text style={tw`font-bold text-gray-400 text-xs`}>Deliver Now!
-            </Text>
+            <Text style={tw`font-bold text-gray-400 text-xs`}>Deliver Now!</Text>
             <Text style={tw`font-bold text-xl`}>Current Location
               <ChevronDownIcon size={20} color="#00ccbb" />
               {/* <Svg fill="none" height={20} width={20}>
@@ -39,24 +40,48 @@ const HomeScreen = () => {
         </View>
 
         {/* Search */}
-        <View style={tw`flex-row items-center`}>
+        <View style={tw`flex-row items-center px-1`}>
           <View style={tw`flex-row flex-1 bg-gray-200 p-2`}>
             {/* <Svg fill="none" height={24} width={24} >
               <Path strokeWidth={1.5} stroke="#00ccbb" strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
             </Svg> */}
             <MagnifyingGlassIcon stroke="#999" strokeWidth={2} size={20} style={tw`mr-3`} />
-            {/* <TextInput
-              placeholder='Restaurants and cuisine'
-              keyboardType='default'
-            /> */}
           </View>
-          {/* <Svg fill="none" height={24} width={24} >
-              <Path strokeWidth={1.5} stroke="#00ccbb" strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </Svg> */}
           <AdjustmentsVerticalIcon className="bg-local" stroke="#00ccbb" strokeWidth={2} style={tw``} />
 
         </View>
       </View>
+
+
+      {/* Body */}
+
+      <ScrollView style={tw`bg-gray-100`}>
+        {/* Component Categories */}
+        <Categories />
+
+        {/* Featured row */}
+        <FeaturedRow
+          id='001'
+          title='Featured'
+          description='Paid placements from our partners'
+        />
+        <FeaturedRow
+          id='002'
+          title='Tasty Discounts'
+          description='Everyone has been enjoying these juicy discounts'
+        />
+        <FeaturedRow
+          id='003'
+          title='Offers near you!'
+          description='Why not support our local restaurant tonight'
+        />
+        <FeaturedRow
+          id='003'
+          title='Offers near you!'
+          description='Why not support our local restaurant tonight'
+        />
+
+      </ScrollView>
     </SafeAreaView>
 
   )
