@@ -75,7 +75,6 @@ const HomeScreen = () => {
           />
         </View>
         <AdjustmentsVerticalIcon
-          className="bg-local"
           stroke="#00ccbb"
           strokeWidth={2}
           style={tw``}

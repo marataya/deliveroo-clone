@@ -31,7 +31,7 @@ const FeaturedRow = ({ id, title, description }) => {
     });
   }, [id]);
 
- 
+
   return (
     <View style={tw`mt-7 max-h-1/2`}>
       <View style={tw`flex-row item-center justify-between px-4`}>
