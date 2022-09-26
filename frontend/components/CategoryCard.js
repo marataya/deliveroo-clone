@@ -11,7 +11,7 @@ const CategoryCard = ({imgUrl, title}) => {
             style={tw`h-20 w-20 rounded`}
 
             />
-            <Text style={tw`absolute bottom-1 left-1 text-white font-bold`}>{title}</Text>
+            <Text style={tw`top-1 left-1 absolute text-white font-bold`}>{title}</Text>
 
         </TouchableOpacity>
     )

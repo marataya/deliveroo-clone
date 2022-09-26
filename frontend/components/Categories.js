@@ -1,16 +1,11 @@
 import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import CategoryCard from './CategoryCard'
+import tw from 'twrnc'
 
 const Categories = () => {
     return (
-        <ScrollView
-        contentContainerStyle={{
-            paddingHorizontal: 15,
-            paddingTop: 10,
-        }}
-        horizontal
-        showsHorizontalScrollIndicator={true}>
+        <ScrollView style={tw`pt-5 max-h-25`} horizontal showsHorizontalScrollIndicator={false}>
         {/* Categorie Card */}
 
             <CategoryCard imgUrl='https://demuths.co.uk/img/u/images/_256x256_crop_center-center_70_none/BAA1C21B-9743-4DCB-96B3-76D08CBFB5F5.jpeg' title="Delicious shushi"/>
