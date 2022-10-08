@@ -46,7 +46,6 @@ const HomeScreen = () => {
         <Image
           source={{ uri: "https://links.papareact.com/wru" }}
           style={tw`w-7 h-7 bg-gray-300 mr-1 p-4 rounded-full`}
-          className="h-7 w-7 bg-gray-300 mr-1 p-4 rounded-full"
         />
         <View style={tw`flex-1`}>
           <Text style={tw`font-bold text-gray-400 text-xs`}>Deliver Now!</Text>
@@ -96,6 +95,7 @@ const HomeScreen = () => {
             description={category.short_description}
           />
         ))}
+        <View style={tw`h-36`}></View>
       </ScrollView>
     </View>
   );

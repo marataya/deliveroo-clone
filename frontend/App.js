@@ -5,7 +5,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NativeScreenContainer } from 'react-native-screens';
 import { Provider } from 'react-redux';
 import { TailwindProvider } from 'tailwindcss-react-native';
+import BasketScreen from './screens/BasketScreen';
+import Delivery from './screens/Delivery';
 import HomeScreen from './screens/HomeScreen';
+import PreparingOrderScreen from './screens/PreparingOrderScreen';
 import RestaurantScreen from './screens/RestaurantScreen';
 import { store } from './store';
 
@@ -19,6 +22,25 @@ export default function App() {
           <Stack.Navigator>
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Restaurant" component={RestaurantScreen} />
+            <Stack.Screen name="Basket" component={BasketScreen}
+              options={{
+                presentation: 'modal',
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen name="PreparingOrderScreen" component={PreparingOrderScreen}
+              options={{
+                presentation: 'fullScreenModal',
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen name="Delivery" component={Delivery}
+              options={{
+                presentation: 'fullScreenModal',
+                headerShown: false,
+              }}
+
+            />
           </Stack.Navigator>
         </TailwindProvider>
       </Provider>

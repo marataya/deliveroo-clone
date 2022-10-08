@@ -34,7 +34,7 @@ const FeaturedRow = ({ id, title, description }) => {
 
   return (
     <View style={tw`mt-7 max-h-1/2`}>
-      <View style={tw`flex-row item-center justify-between px-4`}>
+      <View style={tw`flex-row items-center justify-between px-4`}>
         <Text style={tw`font-bold text-lg`}>{title}</Text>
         <ArrowRightIcon className="" stroke="#00ccbb" strokeWidth={2} />
       </View>
