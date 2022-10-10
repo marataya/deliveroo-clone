@@ -18,7 +18,7 @@ const BasketScreen = () => {
   const [groupedItemsInBasket, setGroupedItemsInBasket] = useState([])
   const dispatch = useDispatch()
 
-  if (items.length === 0) return null
+  // if (items.length === 0) return null
 
 
   const formatNumberToCurrency = (number) => {
@@ -38,6 +38,7 @@ const BasketScreen = () => {
     setGroupedItemsInBasket(groupedItems)
 
   }, [items])
+  
 
   return (
     <SafeAreaView style={tw`flex-1 bg-white`}>
@@ -67,7 +68,7 @@ const BasketScreen = () => {
               <Text style={tw`flex-1`}>{items[0]?.name}</Text>
               <Text style={tw`text-gray-600`}>{formatNumberToCurrency(items[0]?.price)}</Text>
               <TouchableOpacity>
-                <Text onPress={() => dispatch(removeFromBasket({ id: key }))} style={tw`text-[#0cb] text-base`}>Remove</Text>
+                <Text onPress={() => {dispatch(removeFromBasket({ id: key }))}} style={tw`text-[#0cb] text-base`}>Remove</Text>
               </TouchableOpacity>
             </View>
           ))}
